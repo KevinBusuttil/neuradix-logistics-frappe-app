@@ -1,0 +1,167 @@
+{
+ "actions": [],
+ "creation": "2026-08-26 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "warehouse_defaults_section",
+  "default_company",
+  "default_source_warehouse",
+  "default_vehicle_transit_warehouse",
+  "default_return_warehouse",
+  "default_damaged_warehouse",
+  "workflow_controls_section",
+  "checker_required",
+  "checker_must_differ_from_picker",
+  "invoice_on_dispatch",
+  "max_stops_per_plan",
+  "require_shipping_address",
+  "pod_controls_section",
+  "require_signature",
+  "require_gps",
+  "enable_driver_collections",
+  "default_collection_mode"
+ ],
+ "fields": [
+  {
+   "fieldname": "warehouse_defaults_section",
+   "fieldtype": "Section Break",
+   "label": "Warehouse Defaults"
+  },
+  {
+   "fieldname": "default_company",
+   "fieldtype": "Link",
+   "label": "Default Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "default_source_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "description": "Fallback transit warehouse when a vehicle does not have its own warehouse configured.",
+   "fieldname": "default_vehicle_transit_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Vehicle Transit Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "description": "Warehouse that receives saleable stock returned from partial or failed deliveries.",
+   "fieldname": "default_return_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Return Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "description": "Warehouse that receives damaged or quarantined delivery returns.",
+   "fieldname": "default_damaged_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Damaged Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "workflow_controls_section",
+   "fieldtype": "Section Break",
+   "label": "Workflow Controls"
+  },
+  {
+   "default": "1",
+   "description": "Require a separate checking step before loading.",
+   "fieldname": "checker_required",
+   "fieldtype": "Check",
+   "label": "Checker Required"
+  },
+  {
+   "default": "1",
+   "description": "Prevent the picker who completed a Pick List from approving the same Pick List.",
+   "fieldname": "checker_must_differ_from_picker",
+   "fieldtype": "Check",
+   "label": "Checker Must Differ From Picker"
+  },
+  {
+   "default": "1",
+   "description": "Create and submit Sales Invoices when a fully loaded route is dispatched.",
+   "fieldname": "invoice_on_dispatch",
+   "fieldtype": "Check",
+   "label": "Invoice On Dispatch"
+  },
+  {
+   "default": "200",
+   "description": "Operational safety limit for one transport plan.",
+   "fieldname": "max_stops_per_plan",
+   "fieldtype": "Int",
+   "label": "Maximum Stops Per Plan",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "description": "Block planning when a Sales Order has no shipping address.",
+   "fieldname": "require_shipping_address",
+   "fieldtype": "Check",
+   "label": "Require Shipping Address"
+  },
+  {
+   "fieldname": "pod_controls_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Evidence and Collections"
+  },
+  {
+   "default": "1",
+   "fieldname": "require_signature",
+   "fieldtype": "Check",
+   "label": "Require Customer Signature"
+  },
+  {
+   "default": "0",
+   "fieldname": "require_gps",
+   "fieldtype": "Check",
+   "label": "Require GPS Coordinates"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_driver_collections",
+   "fieldtype": "Check",
+   "label": "Enable Driver Collections"
+  },
+  {
+   "fieldname": "default_collection_mode",
+   "fieldtype": "Link",
+   "label": "Default Collection Mode",
+   "options": "Mode of Payment"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-08-26 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neuradix Cassar Ops",
+ "name": "Cassar Operations Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Stock Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Cassar Operations Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

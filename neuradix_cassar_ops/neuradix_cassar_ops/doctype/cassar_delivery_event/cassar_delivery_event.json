@@ -1,0 +1,233 @@
+{
+ "autoname": "field:event_id",
+ "creation": "2026-08-27 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event_id",
+  "delivery_result",
+  "transport_route",
+  "route_stop",
+  "customer",
+  "recipient_name",
+  "signature",
+  "delivery_photo",
+  "latitude",
+  "longitude",
+  "failure_reason",
+  "collection_amount",
+  "collection_mode",
+  "sales_invoice",
+  "delivery_note",
+  "payment_entry",
+  "return_stock_entry",
+  "credit_note",
+  "delivered_quantities_json",
+  "notes",
+  "signed_by_user",
+  "device_id",
+  "client_timestamp",
+  "server_timestamp",
+  "result_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Event ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Delivered",
+   "fieldname": "delivery_result",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Delivery Result",
+   "options": "Delivered\nPartially Delivered\nFailed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transport_route",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transport Route",
+   "options": "Transport Route",
+   "reqd": 1
+  },
+  {
+   "fieldname": "route_stop",
+   "fieldtype": "Data",
+   "label": "Route Stop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "recipient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Recipient Name"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Attach",
+   "label": "Signature",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_photo",
+   "fieldtype": "Attach Image",
+   "label": "Delivery Photo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude",
+   "precision": "8",
+   "read_only": 1
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude",
+   "precision": "8",
+   "read_only": 1
+  },
+  {
+   "fieldname": "failure_reason",
+   "fieldtype": "Small Text",
+   "label": "Failure Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "collection_amount",
+   "fieldtype": "Currency",
+   "label": "Collection Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "collection_mode",
+   "fieldtype": "Link",
+   "label": "Collection Mode",
+   "options": "Mode of Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Link",
+   "label": "Delivery Note",
+   "options": "Delivery Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_entry",
+   "fieldtype": "Link",
+   "label": "Payment Entry",
+   "options": "Payment Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_stock_entry",
+   "fieldtype": "Link",
+   "label": "Return Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "credit_note",
+   "fieldtype": "Link",
+   "label": "Credit Note",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivered_quantities_json",
+   "fieldtype": "Long Text",
+   "label": "Delivered Quantities JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Delivery Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "signed_by_user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Recorded By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "device_id",
+   "fieldtype": "Data",
+   "label": "Device ID"
+  },
+  {
+   "fieldname": "client_timestamp",
+   "fieldtype": "Datetime",
+   "label": "Device Timestamp"
+  },
+  {
+   "default": "Now",
+   "fieldname": "server_timestamp",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Server Timestamp",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "result_json",
+   "fieldtype": "Long Text",
+   "hidden": 1,
+   "label": "Result JSON",
+   "read_only": 1,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-08-27 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neuradix Cassar Ops",
+ "name": "Cassar Delivery Event",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager"
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cassar Operations Manager"
+  }
+ ],
+ "sort_field": "server_timestamp",
+ "sort_order": "DESC",
+ "track_changes": 0
+}

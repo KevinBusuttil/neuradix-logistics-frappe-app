@@ -1,0 +1,32 @@
+# Python caches, environments, and build output
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+
+# Local configuration, logs, and credentials
+.env
+.env.*
+!.env.example
+site_config.json
+common_site_config.json
+*.log
+*.pem
+*.key
+credentials*.json
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*.swp
